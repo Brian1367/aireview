@@ -1,20 +1,20 @@
 class AirlinesController < ApplicationController
 
-def index
-  @airlines = Airline.all
-end
+  def index
+    @airlines = Airline.all
+  end
 
-def show
-  @airline = Airline.find(params[:id])
-  @reviews = @airline.reviews
-end
+  def show
+    @airline = Airline.find(params[:id])
+    @reviews = @airline.reviews
+  end
 
-def new
-  @airline = Airline.new
-end
+  def new
+    @airline = Airline.new
+  end
 
-def create
-  @airline = Airline.new(airline_params)
+  def create
+    @airline = Airline.new(airline_params)
   if @airline.save
     flash[:notice] = "Airline added successfully"
     redirect_to airline_path(@airline)
