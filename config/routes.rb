@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'airlines#index'
 
-  resources :airlines, only:[:index, :new, :create, :show]
+  resources :airlines, only:[:index, :new, :create, :show, :post]
   devise_for :users
 end
 
