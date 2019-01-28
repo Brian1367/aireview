@@ -12,18 +12,18 @@ class AirlineShowContainer extends Component {
     }
   }
   componentDidMount(){
-  let id = this.props.params.id
-  fetch(`/api/v1/airlines/${id}`)
-  .then(response => {
-    let responseBody = response.json()
-    return responseBody
-  }).then(responseBody => {
-    this.setState({
-      airline: responseBody.name,
-      destinations: responseBody.destinations,
-      rating: responseBody.overall_rating
+    let id = this.props.params.id
+    fetch(`/api/v1/airlines/${id}`)
+    .then(response => {
+      let responseBody = response.json()
+      return responseBody
+    }).then(responseBody => {
+      this.setState({
+        airline: responseBody.name,
+        destinations: responseBody.destinations,
+        rating: responseBody.overall_rating
+      })
     })
-  })
   }
 
   render(){

@@ -26,22 +26,22 @@ describe('AirlineShowContainer', () => {
       params={{id:1}}/>);
   });
 
-afterEach(fetchMock.restore)
-  it('should return true to make sure test are running correctly', () => {
-    expect(true).toEqual(true);
-  });
+  afterEach(fetchMock.restore)
+    it('should return true to make sure test are running correctly', () => {
+      expect(true).toEqual(true);
+    });
 
-  it('should render an h1 tag', () => {
-    expect(wrapper.find('h1')).toBePresent();
-  });
+    it('should render an h1 tag', () => {
+      expect(wrapper.find('h1')).toBePresent();
+    });
 
-  it('should render an h1 tag with the label Airline', () => {
-  expect(wrapper.find('h1').text()).toBe('Airline: ');
-  });
+    it('should render an h1 tag with the label Airline', () => {
+    expect(wrapper.find('h1').text()).toBe('Airline: ');
+    });
 
-  it('should render a airline show tile component', () => {
-    expect(wrapper.find(AirlineShowTile)).toBePresent();
-    expect(wrapper.find('h1')).toBePresent()
-    expect(wrapper.find('h1').text()).toEqual('Airline: ')
-  });
+    it('should render a airline show tile component', () => {
+      expect(wrapper.find(AirlineShowTile)).toBePresent();
+      expect(wrapper.find('h1')).toBePresent()
+      expect(wrapper.find('h1').text()).toEqual('Airline: ')
+    });
 });

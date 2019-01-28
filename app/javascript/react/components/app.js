@@ -6,7 +6,7 @@ export const App = (props) => {
   return (
     <div>
       <Router history={browserHistory}>
-      <Route path='/airlines/:id' component={AirlineShowContainer} />
+        <Route path='/airlines/:id' component={AirlineShowContainer} />
       </Router>
     </div>
   );

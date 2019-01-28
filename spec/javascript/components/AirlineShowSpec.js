@@ -3,7 +3,6 @@ import { mount } from "enzyme";
 import jasmineEnzyme from "jasmine-enzyme";
 import React from "react";
 
-
 describe("AirlineShowTile", () => {
   let wrapper;
 
@@ -18,10 +17,6 @@ describe("AirlineShowTile", () => {
     );
   });
 
-  it("should return true to make sure test are running correctly", () => {
-    expect(true).toEqual(true);
-  });
-
   it("should render an h1 tag", () => {
     expect(wrapper.find("h1")).toBePresent();
   });
@@ -31,6 +26,8 @@ describe("AirlineShowTile", () => {
   });
 
   it("should render an p tag with the text Destinations: Argentina", () => {
-    expect(wrapper.find(".monkeys").text()).toBe("Destinations: Argentina");
+    expect(wrapper.find(".destinations").text()).toBe(
+      "Destinations: Argentina"
+    );
   });
 });
