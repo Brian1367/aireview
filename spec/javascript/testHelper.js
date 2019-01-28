@@ -6,14 +6,14 @@ import fetchPonyfill from 'fetch-ponyfill';
 const {fetch, Request, Response, Headers} = fetchPonyfill({});
 
 Object.assign(global, {
- jasmineEnzyme,
- mount,
- React,
- shallow,
- fetch,
- Request,
- Response,
- Headers
+  jasmineEnzyme,
+  mount,
+  React,
+  shallow,
+  fetch,
+  Request,
+  Response,
+  Headers
 });
 
 beforeEach(() => {
