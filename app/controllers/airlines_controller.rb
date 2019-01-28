@@ -6,7 +6,6 @@ class AirlinesController < ApplicationController
 
   def show
     @airline = Airline.find(params[:id])
-    @reviews = @airline.reviews
   end
 
   def new
