@@ -5,13 +5,12 @@ const AirlineShowTile = (props) => {
   return (
     <div className="row">
       <div className="panel radius">
-        <h1>Airline: {props.airline} </h1>
-          <p>Destinations: {props.destinations} </p>
+        <h1>Airline: {props.airline}</h1>
+        <p className="monkeys">Destinations: {props.destinations}</p>
         <p>Overall Rating: {props.rating}</p>
       </div>
     </div>
   )
-
 }
 
 export default AirlineShowTile;
