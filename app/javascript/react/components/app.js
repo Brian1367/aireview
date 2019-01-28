@@ -1,7 +1,15 @@
 import React from 'react'
+import { Route, IndexRoute, Router, browserHistory } from 'react-router';
+import AirlineShowContainer from '../container/AirlineShowContainer'
 
 export const App = (props) => {
-  return (<h1>Make It So React</h1>)
+  return (
+    <div>
+    <Router history={browserHistory}>
+    <Route path='/airlines/:id' component={AirlineShowContainer} />
+    </Router>
+    </div>
+  );
 }
 
-export default App
+export default App;
