@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { browserHistory, Link } from 'react-router';
 import AirlineShowTile  from '../components/AirlineShowTile'
+import ReviewIndexContainer from './ReviewIndexContainer'
 
 class AirlineShowContainer extends Component {
   constructor(props) {
@@ -35,6 +36,7 @@ class AirlineShowContainer extends Component {
           destinations={this.state.destinations}
           rating={this.state.rating}
         />
+        <ReviewIndexContainer />
       </div>
     )
   }
