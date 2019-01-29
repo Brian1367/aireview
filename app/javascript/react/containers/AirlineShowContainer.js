@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import { browserHistory, Link } from "react-router";
-import AirlineShowTile from "../components/AirlineShowTile";
-import NewReviewFormContainer from "./NewReviewFormContainer";
+import React, { Component } from 'react';
+import { browserHistory, Link } from 'react-router';
+import AirlineShowTile  from '../components/AirlineShowTile'
+import ReviewIndexContainer from './ReviewIndexContainer'
 
 class AirlineShowContainer extends Component {
   constructor(props) {
@@ -47,6 +47,7 @@ class AirlineShowContainer extends Component {
             </div>
           </div>
         </div>
+        <ReviewIndexContainer />
       </div>
     );
   }
