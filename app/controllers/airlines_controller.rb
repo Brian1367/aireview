@@ -12,17 +12,6 @@ class AirlinesController < ApplicationController
     @airline = Airline.new
   end
 
-  def create
-    @airline = Airline.new(airline_params)
-  if @airline.save
-    flash[:notice] = "Airline added successfully"
-    redirect_to airline_path(@airline)
-  else
-    flash[:error] = @airline.errors.full_messages.join(', ')
-    render :new
-  end
-end
-
 
 private
 

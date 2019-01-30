@@ -4,10 +4,6 @@ class Api::V1::AirlinesController < ApplicationController
     render json: Airline.find(params[:id])
   end
 
-  def create
-    render json: Airline.new(airline_params)
-  end
-
   def airline_params
     params.require(:airline).permit(:name, :destinations, :overall_rating)
   end

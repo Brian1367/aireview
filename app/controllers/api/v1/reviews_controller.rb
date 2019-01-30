@@ -26,8 +26,7 @@ class Api::V1::ReviewsController < ApplicationController
   def authorize_user
     if !user_signed_in?
       render json: {message: "You must be signed in to create a review."}
-      # raise ActionController::RoutingError.new("Not Found")
-      # redirect_to root_path
+    
     end
   end
 
