@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
   root 'airlines#index'
 
-  resources :airlines, only:[:index, :new, :create, :show]
+  resources :airlines, only: [:index, :show]
   devise_for :users
 
   namespace :api do
     namespace :v1 do
-      resources :airlines, only: [:show]
+      resources :airlines, only: [:show] do
+        resources :reviews, only: [:create]
+      end
     end
   end
 end
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

@@ -22,7 +22,7 @@ describe("AirlineShowTile", () => {
   });
 
   it("should render an h1 tag with the text Airline: American Airlines", () => {
-    expect(wrapper.find("h1").text()).toBe("Airline: American Airlines");
+    expect(wrapper.find(".airline").text()).toBe("Airline: American Airlines");
   });
 
   it("should render an p tag with the text Destinations: Argentina", () => {

@@ -36,12 +36,12 @@ describe('AirlineShowContainer', () => {
     });
 
     it('should render an h1 tag with the label Airline', () => {
-    expect(wrapper.find('h1').text()).toBe('Airline: ');
+    expect(wrapper.find('.airline').text()).toBe('Airline: ');
     });
 
     it('should render a airline show tile component', () => {
       expect(wrapper.find(AirlineShowTile)).toBePresent();
-      expect(wrapper.find('h1')).toBePresent()
-      expect(wrapper.find('h1').text()).toEqual('Airline: ')
+      expect(wrapper.find('.airline')).toBePresent()
+      expect(wrapper.find('.airline').text()).toEqual('Airline: ')
     });
 });
