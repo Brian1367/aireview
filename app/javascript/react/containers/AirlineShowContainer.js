@@ -13,6 +13,7 @@ class AirlineShowContainer extends Component {
     };
   }
   componentDidMount() {
+
     let id = this.props.params.id;
     fetch(`/api/v1/airlines/${id}`)
       .then(response => {

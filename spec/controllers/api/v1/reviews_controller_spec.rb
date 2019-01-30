@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Api::V1::ReviewsController, type: :controller do
     before(:each) do
       Airline.create(name: "American-Airlines", destinations: "Argentina", overall_rating: "5")
-      User.create(email: "afdgfdsf@gmail.com", password: "ksfldjlkj")
+      User.create(email: "brian.wilson@gmail.com", password: "Boston23!")
       Review.create(description: 'Review', price_rating: 4, service_rating: 4, reliability_rating: 5, overall_rating: 4, user: User.last, airline: Airline.last)
       sign_in User.last
     end

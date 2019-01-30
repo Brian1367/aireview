@@ -6,6 +6,5 @@ describe('review new page', () => {
     fetchMock.get('/api/v1/airlines/5/reviews', {
       status: 201,
     });
-    fetch('/api/v1/airlines/5/reviews').then(() => {console.log('working?')}).catch(() => { console.log('error')})
   });
 });
