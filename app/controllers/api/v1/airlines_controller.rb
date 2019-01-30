@@ -14,5 +14,5 @@ class Api::V1::AirlinesController < ApplicationController
 
   def airline_params
     params.require(:airline).permit(:name, :destinations, :overall_rating)
-  end 
+  end
 end

@@ -13,5 +13,5 @@ feature "profile photo" do
 
     expect(page).to have_content("Welcome! You have signed up successfully.")
     expect(page).to have_css("img[src*='photo.png']")
-   end
+  end
 end
