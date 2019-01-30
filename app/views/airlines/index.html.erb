@@ -1,5 +1,8 @@
-<h2> All Airlines</h2>
-
-<% @airlines.each do |airline| %>
-  <h4><%= link_to airline.name, airline_path(airline) %></h4>
-<% end %>
+<div class="row">
+  <div class="large-12 columns">
+    <h1 class="tag-line"> Where Jet Setters get thier info. on the <i class="fas fa-plane"></i></h1>
+    <% @airlines.each do |airline| %>
+      <h4><%= link_to airline.name, airline_path(airline) %></h4>
+    <% end %>
+  </div>
+</div>
