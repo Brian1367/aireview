@@ -1,4 +1,4 @@
-(https://app.codeship.com/projects/0efefc00-00a0-0137-7a26-7aac10a714af/status?branch=master)
+[![Codeship Status for Brian1367/aireview](https://app.codeship.com/projects/0efefc00-00a0-0137-7a26-7aac10a714af/status?branch=master)](/projects/324703)
 
 # README
 
