@@ -5,12 +5,8 @@ class AirlinesController < ApplicationController
   end
 
   def show
-    @airline = Airline.find(params[:id])
   end
-
-  def new
-    @airline = Airline.new
-  end
+end
 
 
 private
