@@ -6,12 +6,12 @@ class AirlinesController < ApplicationController
 
   def show
   end
-end
+
 
 
 private
 
-def airline_params
+ def airline_params
   params.require(:airline).permit(:name, :destinations, :overall_rating)
-  end
+ end
 end
