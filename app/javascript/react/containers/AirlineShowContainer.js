@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { browserHistory, Link } from "react-router";
 import AirlineShowTile from "../components/AirlineShowTile";
 import NewReviewFormContainer from "./NewReviewFormContainer";
-import VoteContainer from "./VoteContainer";
 
 class AirlineShowContainer extends Component {
   constructor(props) {
