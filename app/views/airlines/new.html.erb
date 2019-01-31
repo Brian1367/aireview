@@ -1,0 +1,32 @@
+<h2>New Airline Page</h2>
+
+<h3> New Airline Form </h3>
+
+<%= form_for @airline, html: {class: "new_airline", id: "new_airline"} do |f| %>
+  <% if @airline.errors.any? %>
+	  <div id="error_explanation">
+	    <h2><%= pluralize(@airline.errors.count, "error") %> prohibited this airline from being saved:</h2>
+	    <ul>
+	      <% @airline.errors.full_messages.each do |message| %>
+	        <li><%= message %></li>
+	      <% end %>
+	    </ul>
+	  </div>
+	<% end %>
+  <div class='row'>
+    <%= f.label :name, 'Airline Name' %>
+    <%= f.text_field :name%>
+  </div>
+  <div class='row'>
+    <%= f.label :destinations %>
+    <%= f.text_field :destinations %>
+  </div>
+  <div class='row'>
+    <%= f.label :overall_rating %>
+    <%= f.text_field :overall_rating%>
+  </div>
+  <div class="button">
+    <%= f.submit "Add Airline" %>
+  </div>
+
+<% end %>
