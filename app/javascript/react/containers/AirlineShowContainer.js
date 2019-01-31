@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { browserHistory, Link } from "react-router";
 import AirlineShowTile from "../components/AirlineShowTile";
 import NewReviewFormContainer from "./NewReviewFormContainer";
+import VoteContainer from "./VoteContainer";
 
 class AirlineShowContainer extends Component {
   constructor(props) {
@@ -13,7 +14,6 @@ class AirlineShowContainer extends Component {
     };
   }
   componentDidMount() {
-
     let id = this.props.params.id;
     fetch(`/api/v1/airlines/${id}`)
       .then(response => {
@@ -38,11 +38,15 @@ class AirlineShowContainer extends Component {
           destinations={this.state.destinations}
           rating={this.state.rating}
         />
-        <div className="contianer">
-          <NewReviewFormContainer
-            key={this.props.params.id}
-            id={this.props.params.id}
-          />
+        <div className="row">
+          <div className="small-2 large-4 columns">
+            <div className="panel callout radius">
+              <NewReviewFormContainer
+                key={this.props.params.id}
+                id={this.props.params.id}
+              />
+            </div>
+          </div>
         </div>
       </div>
     );
