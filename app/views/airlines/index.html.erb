@@ -1,8 +1,16 @@
 <div class="row">
   <div class="large-12 columns">
-    <h1 class="tag-line"> Where Jet Setters get thier info. on the <i class="fas fa-plane"></i></h1>
+    <h1 class="tag-line"> Where Jet Setters Talk</h1>
+    <ul class="flex-container">
     <% @airlines.each do |airline| %>
-      <h4><%= link_to airline.name, airline_path(airline) %></h4>
+      <li class="airline_box">
+      <%= link_to airline.name, airline_path(airline) %>
+      <img src="https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-original-577x577/s3/012013/americanairlines_0.png?itok=lUucSFvg">
+      Jet Setters say:
+      <%=airline.overall_rating%><i class="fas fa-star"></i>
+      </li>
     <% end %>
+    </ul>
+
   </div>
 </div>

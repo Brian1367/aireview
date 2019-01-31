@@ -20,7 +20,9 @@ class NewReviewPage extends Component {
     this.addNewReview = this.addNewReview.bind(this);
     this.handlePriceRatingChange = this.handlePriceRatingChange.bind(this);
     this.handleServiceRatingChange = this.handleServiceRatingChange.bind(this);
-    this.handleReliabilityRatingChange = this.handleReliabilityRatingChange.bind(this);
+    this.handleReliabilityRatingChange = this.handleReliabilityRatingChange.bind(
+      this
+    );
     this.handleOverallRatingChange = this.handleOverallRatingChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -36,18 +38,18 @@ class NewReviewPage extends Component {
       },
       credentials: "same-origin"
     })
-    .then(response => {
-      if (response.ok) {
-        return response;
-      } else {
-        let errorMessage =`${response.status} (${response.statusText})`,
-        error = new Error(errorMessage);
-        throw error;
-      }
-    })
+      .then(response => {
+        if (response.ok) {
+          return response;
+        } else {
+          let errorMessage = `${response.status} (${response.statusText})`,
+            error = new Error(errorMessage);
+          throw error;
+        }
+      })
       .then(formPayload => formPayload.json())
       .then(formPayload => {
-        console.log(formPayload)
+        console.log(formPayload);
         browserHistory.push(`/airlines/${this.props.id}`);
       });
   }
@@ -85,7 +87,7 @@ class NewReviewPage extends Component {
   render() {
     return (
       <div>
-        <h1> Add your own review! </h1>
+        <h3 className="new-article-header"> Tell us what you think </h3>
         <form className="new-article-form callout" onSubmit={this.handleSubmit}>
           <DescriptionField
             content={this.state.reviewDescription}

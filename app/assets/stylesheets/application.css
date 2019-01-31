@@ -15,18 +15,42 @@
  *= require foundation_and_overrides
 
  */
+
 *{
-  font-family: 'Pacifico', cursive;
+  font-family: 'Marvel', sans-serif;
 }
 .top-bar {
   background: #2179F2;
+  font-family: 'Marvel', sans-serif;
 }
 .top-bar-section {
   background: #2179F2;
 }
 .tag-line {
-  font-family: 'Pacifico', cursive;
+  font-family: 'Marvel', sans-serif;
 }
-.airline {
-  font-family: 'Pacifico', cursive;
+.airline_box{
+  list-style-type: none;
+}
+
+.airline_box:hover{
+  background-image: linear-gradient(#f9f6d1, white);
+  zoom: 120%;
+}
+
+.flex-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.flex-container > li {
+  display:inline-block;
+  width:20%;
+  margin:5% auto;
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  padding:1em;
+  line-height:1.5em;
+  background:hsla(67, 95%, 95%, 1);
+  border:solid 5px #2179F2;
 }
