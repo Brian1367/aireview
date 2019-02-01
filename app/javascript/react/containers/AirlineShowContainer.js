@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { browserHistory, Link } from 'react-router';
 import AirlineShowTile  from '../components/AirlineShowTile'
 import ReviewIndexContainer from './ReviewIndexContainer'
+import NewReviewFormContainer from './NewReviewFormContainer'
 
 class AirlineShowContainer extends Component {
   constructor(props) {
@@ -9,7 +10,8 @@ class AirlineShowContainer extends Component {
     this.state = {
       airline: "",
       destinations: "",
-      rating: ""
+      rating: "",
+      reviews: []
     };
   }
   componentDidMount() {
@@ -21,12 +23,14 @@ class AirlineShowContainer extends Component {
       })
       .then(responseBody => {
         this.setState({
-          airline: responseBody.name,
-          destinations: responseBody.destinations,
-          rating: responseBody.overall_rating
+          airline: responseBody.airline.name,
+          destinations: responseBody.airline.destinations,
+          rating: responseBody.airline.overall_rating,
+          reviews: responseBody.reviews
         });
       });
   }
+
 
   render() {
     return (
@@ -37,6 +41,7 @@ class AirlineShowContainer extends Component {
           destinations={this.state.destinations}
           rating={this.state.rating}
         />
+<<<<<<< HEAD
         <div className="row">
           <div className="small-2 large-4 columns">
             <div className="panel callout radius">
@@ -46,8 +51,20 @@ class AirlineShowContainer extends Component {
               />
             </div>
           </div>
+=======
+      <div>
+        <ReviewIndexContainer
+        reviews={this.state.reviews}
+        />
+      </div>
+        <div className="panel">
+          <NewReviewFormContainer
+            key={this.props.params.id}
+            id={this.props.params.id}
+          />
+>>>>>>> Finally
         </div>
-        <ReviewIndexContainer />
+
       </div>
     );
   }

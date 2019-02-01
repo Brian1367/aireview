@@ -20,39 +20,35 @@ describe("ReviewShowTile", () => {
     );
   });
 
-  it("should render an p tag with the text Mike", () => {
-    expect(wrapper.find(".user").text()).toBe(
-      "Mike"
-    );
-  });
 
-  it("should render an p tag with the text description", () => {
+
+  it("should render an p div with the className of description with the text description", () => {
     expect(wrapper.find(".description").text()).toBe(
       "description"
     );
   });
 
-  it("should render an p tag with the text price", () => {
+  it("should render an p div with the className of price with the text 2", () => {
     expect(wrapper.find(".price").text()).toBe(
-      "2"
+      "Price Value: 2"
     );
   });
 
-  it("should render an p tag with the text service", () => {
+  it("should render an p div with the className of service with the text 1", () => {
     expect(wrapper.find(".service").text()).toBe(
-      "1"
+      "Service Quality: 1"
     );
   });
 
-  it("should render an p tag with the text reliability", () => {
+  it("should render an p div with the className of reliability with the text 2", () => {
     expect(wrapper.find(".reliability").text()).toBe(
-      "2"
+      "Reliability Schdule: 2"
     );
   });
 
-  it("should render an p tag with the text overall", () => {
+  it("should render an p div with the className of overall with the text 1", () => {
     expect(wrapper.find(".overall").text()).toBe(
-      "1"
+      "Overall Rating: 1"
     );
   });
 });

@@ -1,31 +1,26 @@
 import ReviewIndexContainer from '../../../app/javascript/react/containers/ReviewIndexContainer';
-import ReviewShowTile from '../../../app/javascript/react/components/ReviewShowTile';
 import { mount } from "enzyme";
 import jasmineEnzyme from "jasmine-enzyme";
 import React from "react";
 
 describe('ReviewIndexContainer', () => {
   let wrapper;
-  const props = {
-    user: "Mike",
+  const reviews = [{
+    id: "1",
+    user_id: "1",
     description: "description",
-    price: "2",
-    service: "1",
-    reliability: "2",
-    overall: "1"
-  }
+    price_rating: "2",
+    service_rating: "1",
+    reliability_rating: "2",
+    overall_rating: "1"
+  }]
 
   beforeEach(() => {
-    wrapper = mount(<ReviewIndexContainer {...props} />);
+    wrapper = mount(<ReviewIndexContainer reviews = {reviews}  />);
   })
 
   it('should render a review show tile component with information', () => {
-    expect(wrapper.find('.user').nodes[2].innerHTML).toMatch('Mike')
-    expect(wrapper.find('.description').nodes[2].innerHTML).toMatch('description')
-    expect(wrapper.find('.price').nodes[2].innerHTML).toMatch('2')
-    expect(wrapper.find('.service').nodes[2].innerHTML).toMatch('1')
-    expect(wrapper.find('.reliability').nodes[2].innerHTML).toMatch('2')
-    expect(wrapper.find('.overall').nodes[2].innerHTML).toMatch('1')
+    expect(wrapper.find('.description')).toBePresent()
   });
 
 });
