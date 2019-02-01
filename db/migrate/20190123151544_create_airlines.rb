@@ -4,6 +4,7 @@ class CreateAirlines < ActiveRecord::Migration[5.2]
       t.string :name, null: false
       t.string :destinations, null: false
       t.integer :overall_rating, null:false
+      t.string :image_logo
       t.timestamps null: false
     end
   end
