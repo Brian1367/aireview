@@ -33,7 +33,7 @@ class AirlineShowContainer extends Component {
   }
   handleSubmit(){
     preventDefault();
-console.log("hello");
+
   }
 
   addNewReview(formPayload) {
@@ -58,7 +58,6 @@ console.log("hello");
       })
       .then(responseBody=> responseBody.json())
       .then(responseBody => {
-        debugger
         this.setState({
         reviews: this.state.reviews.concat(responseBody)
       })
