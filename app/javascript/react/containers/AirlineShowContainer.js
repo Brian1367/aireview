@@ -33,25 +33,21 @@ class AirlineShowContainer extends Component {
 
   render() {
     return (
-      <div className="flex-container">
-        <div class="airline_box">
-          <AirlineShowTile
+      <div>
+        <AirlineShowTile
             key={this.props.params.id}
             airline={this.state.airline}
             destinations={this.state.destinations}
             rating={this.state.rating}
-          />
-          <div class="airline_box">
-            <ReviewIndexContainer reviews={this.state.reviews} />
-          </div>
-          <div className="row">
-            <div className="small-4 large-6 columns">
-              <div className="panel callout radius">
-                <NewReviewFormContainer
-                  key={this.props.params.id}
-                  id={this.props.params.id}
-                />
-              </div>
+        />
+        <ReviewIndexContainer reviews={this.state.reviews} />
+        <div className="row">
+          <div className="small-4 large-6 columns">
+            <div className="panel callout radius">
+              <NewReviewFormContainer
+              key={this.props.params.id}
+              id={this.props.params.id}
+              />
             </div>
           </div>
         </div>
