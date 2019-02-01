@@ -6,9 +6,9 @@ airlines3 = Airline.create(name: 'Delta Airlines', destinations:'Morroccoa', ove
 
 
 
-user1 = User.create(name: 'Joe', email: 'joe@gmail.com', password: 'password')
-user2 = User.create(name: 'Mike', email: 'Mike@gmail.com', password:'password')
-user3 = User.create(name: 'Casi', email: 'casi@gmail.com', password: 'password')
+user1 = User.create(email: 'joe@gmail.com', password: 'password')
+user2 = User.create(email: 'Mike@gmail.com', password:'password')
+user3 = User.create(email: 'casi@gmail.com', password: 'password')
 
 
 review1 = Review.create(user_id: 1, description: 'Very Cool', price_rating: 2, service_rating: 3, reliability_rating: 2, overall_rating: 2, airline_id: 1 )
