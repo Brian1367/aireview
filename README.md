@@ -2,33 +2,25 @@
 
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-Must have Ruby 2.4.5
-Bundle 2.0
-postgres data base
-on system
 * System dependencies
-
+  * Must have Ruby 2.4.5
+  * Bundle 2.0
+  * postgres data base
+  * on system
 * Configuration
-Bundle Install
-yarn Install
+  * Bundle Install
+  * yarn Install
 * Database creation
-rake db:setup
+  * rake db:setup
 * Database initialization
-rake db:seed
+  * rake db:seed
 * How to run the test suite
-yarn run test
-bundle exec rspec
-* Services (job queues, cache servers, search engines, etc.)
-We use Rails, React, font awesome 5, google fonts and foundation 5
-* Deployment instructions
-
-* ...
+  * yarn run test
+  * bundle exec rspec
+* Services 
+  * We used Rails, React, Font Awesome 5, Google Fonts and ZURB Foundation 5 which most came with the 'make it so' gem from Launch Academy. 
+* Deployment 
+  * Deployed to Heroku and used AWS for photo hosting
 
 # App walkthrough:
 
