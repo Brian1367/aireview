@@ -32,7 +32,9 @@
 .airline_box{
   list-style-type: none;
 }
-
+.airline{
+  font-family: 'Marvel', sans-serif;
+}
 .airline_box:hover{
   background-image: linear-gradient(#f9f6d1, white);
   zoom: 120%;

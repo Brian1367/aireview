@@ -6,8 +6,9 @@ const ReviewShowTile = props => {
   return (
 
   <div className="review-tile">
+      <hr/>
     <div className="row">
-      <div className="panel radius">
+      <div >
       <div className="row">
       <div className="large-1 columns">
         <VoteCounter/>
