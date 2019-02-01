@@ -10,6 +10,7 @@ class NewReviewPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      reviews:[],
       reviewDescription: "",
       reviewPriceRating: 1,
       reviewServiceRating: 1,
@@ -17,42 +18,43 @@ class NewReviewPage extends Component {
       reviewOverallRating: 1
     };
     this.handleDescriptionChange = this.handleDescriptionChange.bind(this);
-    this.addNewReview = this.addNewReview.bind(this);
     this.handlePriceRatingChange = this.handlePriceRatingChange.bind(this);
     this.handleServiceRatingChange = this.handleServiceRatingChange.bind(this);
-    this.handleReliabilityRatingChange = this.handleReliabilityRatingChange.bind(
-      this
-    );
+    this.handleReliabilityRatingChange = this.handleReliabilityRatingChange.bind(this);
     this.handleOverallRatingChange = this.handleOverallRatingChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this),
+    this.handleClear = this.handleClear.bind()
   }
 
-  addNewReview(formPayload) {
-    let jsonStringInfo = JSON.stringify(formPayload);
-    fetch(`/api/v1/airlines/${this.props.id}/reviews`, {
-      method: "POST",
-      body: jsonStringInfo,
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json"
-      },
-      credentials: "same-origin"
-    })
-      .then(response => {
-        if (response.ok) {
-          return response;
-        } else {
-          let errorMessage = `${response.status} (${response.statusText})`,
-            error = new Error(errorMessage);
-          throw error;
-        }
-      })
-      .then(formPayload => formPayload.json())
-      .then(formPayload => {
-        console.log(formPayload);
-        browserHistory.push(`/airlines/${this.props.id}`);
-      });
-  }
+  // addNewReview(formPayload) {
+  //   let jsonStringInfo = JSON.stringify(formPayload);
+  //   fetch(`/api/v1/airlines/${this.props.id}/reviews`, {
+  //     method: "POST",
+  //     body: jsonStringInfo,
+  //     headers: {
+  //       Accept: "application/json",
+  //       "Content-Type": "application/json"
+  //     },
+  //     credentials: "same-origin"
+  //   })
+  //     .then(response => {
+  //       if (response.ok) {
+  //         return response;
+  //       } else {
+  //         let errorMessage = `${response.status} (${response.statusText})`,
+  //           error = new Error(errorMessage);
+  //         throw error;
+  //       }
+  //     })
+  //     .then(formPayload => formPayload.json())
+  //     .then(formPayload => {
+  //       this.setState({
+  //       reviews: this.state.reviews.concat(formPayload)
+  //     })
+  //     console.log(this.props.id);
+  //       browserHistory.push(`/airlines/${this.props.id}`);
+  //     });
+  // }
 
   handlePriceRatingChange(event) {
     this.setState({ reviewPriceRating: event.target.value });
@@ -71,24 +73,40 @@ class NewReviewPage extends Component {
   handleDescriptionChange(event) {
     this.setState({ reviewDescription: event.target.value });
   }
+  handleClear(event){
+
+  }
 
   handleSubmit(event) {
     event.preventDefault();
+    // event.target.reset();
+
     let formPayload = {
       description: this.state.reviewDescription,
       price_rating: this.state.reviewPriceRating,
       service_rating: this.state.reviewServiceRating,
       reliability_rating: this.state.reviewReliabilityRating,
-      overall_rating: this.state.reviewOverallRating
+      overall_rating: this.state.reviewOverallRating,
+      airline_id: this.props.id
     };
-    this.addNewReview(formPayload);
-  }
+
+
+    this.props.addNewReview(formPayload);
+    this.setState({reviewDescription: '' ,
+                   reviewPriceRating: 1 ,
+                   reviewServiceRating: 1 ,
+                   reviewReliabilityRating: 1,
+                   reviewOverallRating: 1
+                 });
+   }
+
 
   render() {
     return (
       <div>
         <h3 className="new-article-header"> Tell us what you think </h3>
-        <form className="new-article-form callout" onSubmit={this.handleSubmit}>
+        <form className="new-article-form callout"
+        onSubmit={this.handleSubmit}>
           <DescriptionField
             content={this.state.reviewDescription}
             label="Review Description"
@@ -121,8 +139,8 @@ class NewReviewPage extends Component {
           />
 
           <div className="button-group">
-            <button className="button">Clear</button>
-            <input className="button" type="submit" value="Submit" />
+            <button className="button" onClick={this.handleClear}>Clear</button>
+            <input className="button" type="submit" value="submit" />
           </div>
         </form>
       </div>

@@ -1,11 +1,17 @@
+require 'pry'
 class Api::V1::ReviewsController < ApplicationController
   protect_from_forgery unless: -> { request.format.json? }
    before_action :authorize_user, except: :show
 
   def create
-    new_review = Review.new(description: review_params[:description], price_rating: review_params[:price_rating], service_rating: review_params[:service_rating], reliability_rating: review_params[:reliability_rating], overall_rating: review_params[:overall_rating], airline_id: review_params[:airline_id], user_id: current_user)
-
-    render json: new_review
+    new_review = Review.new(review_params)
+    new_review.user = current_user
+    new_review.airline_id = params["review"]["airline_id"]
+    if new_review.save
+      render json: new_review
+    else
+      render json: {error: new_review.errors.full_messages}
+    end
   end
 
   def show
