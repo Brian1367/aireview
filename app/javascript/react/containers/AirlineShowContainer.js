@@ -41,17 +41,6 @@ class AirlineShowContainer extends Component {
           destinations={this.state.destinations}
           rating={this.state.rating}
         />
-<<<<<<< HEAD
-        <div className="row">
-          <div className="small-2 large-4 columns">
-            <div className="panel callout radius">
-              <NewReviewFormContainer
-                key={this.props.params.id}
-                id={this.props.params.id}
-              />
-            </div>
-          </div>
-=======
       <div>
         <ReviewIndexContainer
         reviews={this.state.reviews}
@@ -62,7 +51,6 @@ class AirlineShowContainer extends Component {
             key={this.props.params.id}
             id={this.props.params.id}
           />
->>>>>>> Finally
         </div>
 
       </div>
