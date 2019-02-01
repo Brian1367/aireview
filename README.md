@@ -30,22 +30,22 @@ We use Rails, React, font awesome 5, google fonts and foundation 5
 
 * ...
 
-#App walkthrough:
+# App walkthrough:
 
-##Sprint 1
+## Sprint 1
 “User can sign in to the website.”
--what technologies did we use?  (Carrierwave, Heroku for hosting, Devise for login)
--what was the biggest challenge?
--Challenges: being the only person with AWS access until we figured out the i/1 problem
+- what technologies did we use?  (Carrierwave, Heroku for hosting, Devise for login)
+- what was the biggest challenge?
+- Challenges: being the only person with AWS access until we figured out the i/1 problem
 
 
-##Sprint 2
+## Sprint 2
 User can see a list of airlines and click on them to see the posted reviews
 User can enter a new airline.
 Technologies: Foundation, explain linking to external images for airlines.
 
 
-##Sprint 3
+## Sprint 3
 User can upvote/downvote other reviews.
 User can enter a new review.
 Get a data rejection, briefly say “this was our validation,”
@@ -58,18 +58,18 @@ Most websites review price, but comfort is also important!
 
 . Strengths of people in our group
 
--[Gabriela](https://github.com/Gabrielaquesada):  React
+- [Gabriela](https://github.com/Gabrielaquesada):  React
 
--[Brian](https://github.com/Brian1367): Rails
+- [Brian](https://github.com/Brian1367): Rails
 
--[Nader](https://github.com/nadermokhtar): Foundation
+-[ Nader](https://github.com/nadermokhtar): Foundation
 
--[Gabi](https://github.com/Proudfeets): Organization/communication/Debugging
+- [Gabi](https://github.com/Proudfeets): Organization/communication/Debugging
 
-###Eventual goals:
+### Eventual goals:
 
--favorite airports
+- favorite airports
 
--booking flights
+- booking flights
 
--integrating with social media
+- integrating with social media
