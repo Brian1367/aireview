@@ -62,7 +62,7 @@ Most websites review price, but comfort is also important!
 
 - [Brian](https://github.com/Brian1367): Rails
 
--[ Nader](https://github.com/nadermokhtar): Foundation
+- [ Nader](https://github.com/nadermokhtar): Foundation
 
 - [Gabi](https://github.com/Proudfeets): Organization/communication/Debugging
 
