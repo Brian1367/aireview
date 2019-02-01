@@ -3,8 +3,6 @@ require 'spec_helper'
 
 RSpec.describe Review, type: :model do
   describe "Review model" do
-    it { should have_valid(:user).when("User is Brian Wilson") }
-    it { should_not have_valid(:user).when(nil, "") }
 
     it { should have_valid(:description).when("World class Ariline") }
     it { should_not have_valid(:description).when(nil, "") }

@@ -14,7 +14,7 @@ const PriceRatingField = props => {
       <label>{props.label}</label>
       <select
         id={props.id}
-        name="price-sating"
+        name="price-rating"
         onChange={props.handlePriceRatingChange}
       >
         {nums}

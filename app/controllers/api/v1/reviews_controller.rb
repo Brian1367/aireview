@@ -2,11 +2,14 @@ class Api::V1::ReviewsController < ApplicationController
   protect_from_forgery unless: -> { request.format.json? }
    before_action :authorize_user, except: :show
 
-
   def create
-    new_review = Review.new(description: review_params[:description], price_rating: review_params[:price_rating], service_rating: review_params[:service_rating], reliability_rating: review_params[:reliability_rating], overall_rating: review_params[:overall_rating], airline_id: review_params[:airline_id], user: current_user)
+    new_review = Review.new(description: review_params[:description], price_rating: review_params[:price_rating], service_rating: review_params[:service_rating], reliability_rating: review_params[:reliability_rating], overall_rating: review_params[:overall_rating], airline_id: review_params[:airline_id], user_id: current_user)
 
     render json: new_review
+  end
+
+  def show
+    render json: Review.find(params[:id])
   end
 
   def destroy
@@ -26,7 +29,7 @@ class Api::V1::ReviewsController < ApplicationController
   def authorize_user
     if !user_signed_in?
       render json: {message: "You must be signed in to create a review."}
-    
+
     end
   end
 

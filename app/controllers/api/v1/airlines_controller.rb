@@ -1,7 +1,14 @@
 class Api::V1::AirlinesController < ApplicationController
 
+
+  def index
+    render json: Airline.all
+  end
+
   def show
-    render json: Airline.find(params[:id])
+    @airline = Airline.find(params[:id])
+
+    render json: { airline: @airline, reviews: @airline.reviews }
   end
 
 #   def create

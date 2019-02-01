@@ -44,4 +44,5 @@ describe('AirlineShowContainer', () => {
       expect(wrapper.find('.airline')).toBePresent()
       expect(wrapper.find('.airline').text()).toEqual('Airline: ')
     });
+
 });
