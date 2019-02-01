@@ -58,7 +58,7 @@ console.log("hello");
       })
       .then(responseBody=> responseBody.json())
       .then(responseBody => {
-        debugger
+
         this.setState({
         reviews: this.state.reviews.concat(responseBody)
       })
